@@ -1,0 +1,466 @@
+@font-face
+	src: url("../fonts/Roboto-Bold.ttf")
+	font-family: Roboto
+
+$c1: #000
+$c2: #fff
+$fz: 16px
+$ff1: 'Open Sans', sans-serif
+$ff2: 'Roboto', sans-serif
+
+
+*
+	margin: 0
+	padding: 0
+
+body
+	font: $fz $ff1
+	color: $c1
+	background: $c2
+	box-sizing: border-box
+
+html, body, header, article, aside, main, footer, div, h1, h2, h3, h4, h5, h6, button, .show
+	display: block
+
+meta, script, style, .hidden
+	display: none
+
+.h1, h1, .h2, h2, .h3, h3, .h4, h4, .h5, h5, .h6, h6
+	font-weight: normal
+
+.h1, h1
+	font-size: 24px
+.h2, h2
+	font-size: 30px
+	color: #f8786b  
+	font-weight: bold
+	text-transform: uppercase
+	text-align: center
+	padding-top: 95px
+	padding-bottom: 90px
+.h3, h3
+	font-size: 16px
+.h4, h4
+	font-size: 14px
+.h5, h5
+	font-size: 12px
+.h6, h6
+	font-size: 10px
+
+
+
+a
+	color: $c1
+	text-decoration: none
+
+button, input[type="submit"]
+	cursor: pointer
+
+button, input, textarea
+	display: block
+	outline: none
+	border: none
+	background: none
+	font-family: $ff1
+	box-sizing: border-box
+
+input
+	border: 1px solid #D2D2D2
+	font-size: 14px
+	padding: 5.5px 10px
+
+input[name="name"], input[name="surname"], input[name="patronymic"], input[name="position"]
+	text-transform: capitalize
+
+textarea
+	resize: none
+
+ul, ol
+	margin: 5px 0 5px 20px
+
+
+::placeholder
+	color: gray
+
+
+.tal
+	text-align: left
+
+.tac
+	text-align: center
+
+.tar
+	text-align: right
+
+
+i.icon
+	display: inline-block
+
+
+.i, i
+	font-style: italic
+
+.b, b, strong
+	font-weight: bold
+
+.btn, button
+	display: block
+	text-align: center
+	cursor: pointer
+.btn
+	position: relative
+	margin-top: 18px
+	padding: 10px 17px
+	background: #73c868
+	border-radius: 3px
+	font-weight: bold
+	font-size: 12px
+	color: white
+	text-transform: uppercase
+	font-family: $ff1
+	border-bottom: 3px solid #4b8244
+	margin-left: auto
+	margin-right: auto
+	&:hover
+		top: 3px
+		border-bottom: none
+		background: #4b8244
+
+.container
+	position: relative
+	width: 950px
+	margin: 0 auto
+	padding-left: 15px
+	padding-right: 15px
+
+.row, .clearfix
+	&:before, &:after
+		display: table
+		content: ''
+	&:after
+		clear: both
+
+.w2 > .col
+	width: 50%
+.w3 > .col
+	width: 33.333333333%
+.w4 > .col
+	width: 25%
+.w5 > .col
+	width: 20%
+.w6 > .col
+	width: 16.666666667%
+.col
+	display: block
+	float: left
+	min-height: 1px
+	box-sizing: border-box
+
+.breadcrumbs
+	list-style: none
+	li
+		display: inline
+		&:after
+			position: relative
+			display: inline-block
+			content: '/'
+			margin-right: 0
+			margin-left: 3px
+		&:last-of-type
+			&:after
+				display: none
+
+.caret
+	li
+		list-style: none
+	a
+		cursor: pointer
+	ul
+		display: none
+		
+
+.breadcrumbs, .caret
+	margin-left: 0
+
+
+
+button#sticks
+	width: 40px
+	height: 40px
+	span
+		display: block
+		position: relative
+		width: 35px
+		height: 4px
+		background: $c1		
+		margin-left: auto
+		margin-right: auto
+		transition: .5s
+		&:nth-of-type(2)
+			margin: 6px auto
+button#sticks.close
+	span
+		&:nth-of-type(1)
+			transform: rotate(135deg)
+		&:nth-of-type(2)
+			display: none
+		&:nth-of-type(3)
+			margin-top: -4px
+			transform: rotate(-135deg)
+
+.slider
+	width: 780px
+	margin: 0 auto
+	.slick-prev
+		background-image: url("../img/arrow-prev.png")
+		left: -60px
+	.slick-next
+		background-image: url("../img/arrow-next.png")
+		right: -60px
+	.slick-arrow
+		width: 18px
+		height: 32px
+		&:before
+			display: none
+.contacts
+	text-align: center
+	line-height: 23px
+	margin-left: 65px
+	a
+		display: block
+		font-size: 18px
+	.tel
+		font-weight: bold
+	.email
+		font-size: 14px
+
+
+#popup
+	display: none
+	z-index: 1000
+	position: absolute
+	left: 0
+	top: 0
+	width: 100%
+	height: 100%
+	background: rgba(0,0,0,.5)
+	.container
+		width: 300px
+		padding: 25px
+		background: $c2
+		.title
+			display: block
+			text-align: center
+			margin-bottom: 20px
+			font-size: 25px
+			text-transform: uppercase
+		.message
+			display: none
+		.close
+			position: absolute
+			top: -15px
+			right: -15px
+			width: 30px
+			height: 30px
+			background: #73C868
+			border-radius: 2px
+			font-size: 20px
+			line-height: 30px
+			color: $c2
+			text-align: center
+			&:hover
+				background: #4b8244
+		input
+			display: block
+			width: 80%
+			margin: 0 auto 15px
+
+		.btn
+			width: 150px
+			&:hover
+				margin-bottom: 3px
+
+#main
+	min-height: 800px
+	color: $c2
+	padding-top: 35px
+	box-sizing: border-box
+	.top
+		a
+			color: $c2
+		.logo
+			margin-right: 70px
+			*
+				display: block
+			span
+				font-size: 12px
+				text-transform: uppercase
+				margin-bottom: 10px
+		.nav
+			padding-top: 40px
+			ul
+				margin: 0
+			li
+				list-style: none
+				display: inline-block
+				margin: 0
+				padding: 0
+			a
+				margin-right: 30px
+				font-size: 14px
+				border-bottom: 1px solid transparent
+				padding-bottom: 5px
+				&:hover
+					border-bottom: 1px solid $c2
+		.contacts
+			margin-top: 19px 
+	.middle
+		img
+			display: block
+			margin: 0 auto
+			margin-top: 95px
+			margin-bottom: 135px
+	.bottom
+		text-align: center 
+		span
+			font-size: 30px
+			font-family: $ff2
+		
+#goals
+	padding-bottom: 85px
+	p
+		font-size: 14px
+		text-align: center
+		color: #525252
+	img
+		display: block
+		margin: 0 auto 15px
+	.left
+		width: 225px
+		margin-right: 82px 
+	.middle
+		width: 320px
+
+	.right
+		float: right
+		width: 255px
+		line-height: 20px
+
+#schedule
+	background-color: #F7F7F7
+	background-image: url("../img/bg4.png")
+	background-repeat: no-repeat
+	background-position: center 285px
+	text-align: center
+	padding-bottom: 96px
+	img
+		display: block
+		margin: 0 auto 14px
+	span
+		font-size: 14px
+		font-weight: bold
+
+	.middle
+		margin: 65px 0 130px
+#for
+	color: $c2
+	text-align: center
+	padding-bottom: 100px
+	h2
+		color: $c2
+	img
+		display: block
+		margin: 0 auto
+	span
+		display: block
+		font-weight: bold
+		font-size: 14px
+		text-transform: uppercase
+		margin: 16.5px 0 13px
+	p
+		font-size: 14px
+		line-height: 20px
+	.one
+		margin-bottom: -25px
+
+#feedback
+	padding-bottom: 93px
+	font-size: 14px
+	background: #F8F8F8
+	.img
+		margin-right: 18px
+
+	.text
+		width: 295px
+		margin-top: -3px
+
+	.video
+		float: right
+	h3
+		font-size: 16px
+		text-transform: uppercase
+		font-weight: bold
+	span
+		display: block
+		color: #5e5e5e
+		margin: 5.5px 0
+	p
+		color: #525252
+		line-height: 20px
+
+#reg
+	padding-bottom: 95px
+	label
+		display: block
+		font-size: 14px
+		margin-bottom: 7px
+	input
+		width: 100%
+	.row
+		margin-bottom: 11.5px
+	.col
+		padding-left: 15px
+		padding-right: 15px
+
+#news
+	background: #F8F8F8
+	padding-bottom: 100px
+	h3
+		font-size: 16px
+		font-weight: bold
+		margin-top: -3px
+		line-height: 20px
+		margin-bottom: 10px
+	p
+		font-size: 14px
+		line-height: 20px
+	.left
+		width: 460px
+	.right
+		float: right
+
+#events
+	padding-bottom: 92px
+	img
+		display: block
+		float: left
+		&.id1
+			margin-top: -5px
+			margin-right: 40px
+		&.id2
+			margin-top: 5px
+		&.id3
+			margin-top: -8px
+			margin-left: 36px
+			margin-right: 34px
+		&.id4
+			margin-top: -10px
+#footer
+	background: #222222
+	padding-top: 51px
+	padding-bottom: 46px
+	a
+		display: block
+		color: $c2
+	.contacts
+		float: right
